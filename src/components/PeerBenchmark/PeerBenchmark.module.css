@@ -1,0 +1,147 @@
+.container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  margin: 1rem auto;
+  max-width: 800px;
+  transition: all 0.3s ease;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 1.25rem 0;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #4f46e5 0%, #8b5cf6 100%);
+  border-radius: 3px;
+}
+
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.leaderboardItem {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  transition: all 0.2s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.leaderboardItem:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.leaderboardItem.currentUser {
+  background-color: #eef2ff;
+  border-color: #c7d2fe;
+  position: relative;
+  overflow: hidden;
+}
+
+.leaderboardItem.currentUser::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #4f46e5;
+}
+
+.rank {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #6b7280;
+  width: 24px;
+  text-align: center;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.leaderboardItem:nth-child(1) .rank {
+  color: #f59e0b;
+}
+
+.leaderboardItem:nth-child(2) .rank {
+  color: #9ca3af;
+}
+
+.leaderboardItem:nth-child(3) .rank {
+  color: #d97706;
+}
+
+.name {
+  flex: 1;
+  font-weight: 500;
+  color: #1f2937;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 1rem;
+}
+
+.leaderboardItem.currentUser .name {
+  font-weight: 600;
+  color: #4f46e5;
+}
+
+.streak {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4f46e5;
+  background-color: #eef2ff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.leaderboardItem.currentUser .streak {
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive styles */
+@media (max-width: 640px) {
+  .container {
+    padding: 1.25rem;
+  }
+  
+  .title {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+  
+  .leaderboardItem {
+    padding: 0.625rem 0.75rem;
+  }
+  
+  .rank {
+    font-size: 0.9375rem;
+    margin-right: 0.75rem;
+  }
+  
+  .streak {
+    font-size: 0.8125rem;
+    padding: 0.2rem 0.6rem;
+  }
+}

@@ -1,0 +1,148 @@
+.matrixContainer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.matrixGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.dayCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  min-width: 60px;
+  min-height: 70px;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+}
+
+/* Interactive state for today's cell */
+.dayCell:not(.nonInteractive) {
+  cursor: pointer;
+}
+
+/* Non-interactive state for past/future days */
+.dayCell.nonInteractive {
+  opacity: 0.7;
+  background-color: #f9fafb;
+  cursor: not-allowed;
+}
+
+/* Remove hover/focus effects for non-interactive cells */
+.dayCell.nonInteractive:hover,
+.dayCell.nonInteractive:focus {
+  transform: none;
+  box-shadow: none;
+  border-color: #e5e7eb;
+  z-index: 0;
+}
+
+.dayCell:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+  border-color: #4f46e5;
+  z-index: 1;
+}
+
+.dayCell:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dayCell:focus-visible {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+.dayName {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.dayNumber {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.completionIndicator {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.completionIndicator.completed {
+  background-color: #10b981;
+  animation: popIn 0.3s ease-out;
+}
+
+.completionIndicator.pulse {
+  animation: pulse 0.5s ease-in-out;
+}
+
+.dayCell.today {
+  border-color: #4f46e5;
+  background-color: #eef2ff;
+}
+
+.dayCell.today .dayNumber {
+  color: #4f46e5;
+  font-weight: 700;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive styles */
+@media (max-width: 640px) {
+  .matrixGrid {
+    gap: 0.5rem;
+  }
+  
+  .dayCell {
+    padding: 0.5rem 0.25rem;
+  }
+  
+  .dayName {
+    font-size: 0.65rem;
+  }
+  
+  .dayNumber {
+    font-size: 1rem;
+  }
+  
+  .completionIndicator {
+    width: 20px;
+    height: 20px;
+  }
+}

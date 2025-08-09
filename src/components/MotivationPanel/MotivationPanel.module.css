@@ -1,0 +1,175 @@
+.panel {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  margin: 1rem auto;
+  max-width: 800px;
+  transition: all 0.3s ease;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 1rem 0;
+}
+
+.streakContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.streakItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.streakLabel {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.streakValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4f46e5;
+  line-height: 1;
+}
+
+.streakDivider {
+  width: 1px;
+  height: 2.5rem;
+  background-color: #e5e7eb;
+}
+
+.messageCard {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  border: 1px solid #bfdbfe;
+  transition: all 0.3s ease;
+}
+
+.messageCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.emoji {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.messageTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e40af;
+  margin: 0 0 0.5rem 0;
+}
+
+.messageText {
+  color: #1e40af;
+  margin: 0;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.secondaryButton,
+.resetButton {
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+}
+
+.secondaryButton {
+  background-color: #e0e7ff;
+  color: #4f46e5;
+}
+
+.secondaryButton:hover {
+  background-color: #c7d2fe;
+}
+
+.resetButton {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.resetButton:hover {
+  background-color: #fecaca;
+}
+
+/* Focus styles for accessibility */
+.secondaryButton:focus-visible,
+.resetButton:focus-visible {
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+}
+
+.resetButton:focus-visible {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.3);
+}
+
+/* Responsive styles */
+@media (max-width: 640px) {
+  .panel {
+    padding: 1.25rem;
+  }
+  
+  .title {
+    font-size: 1.25rem;
+  }
+  
+  .streakContainer {
+    gap: 1.5rem;
+  }
+  
+  .streakValue {
+    font-size: 1.25rem;
+  }
+  
+  .messageCard {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .secondaryButton,
+  .resetButton {
+    width: 100%;
+    padding: 0.625rem 1rem;
+  }
+}
