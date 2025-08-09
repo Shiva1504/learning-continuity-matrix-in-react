@@ -29,6 +29,12 @@ A React-based Learning Continuity Matrix designed to enhance student engagement 
    # or
    yarn install
    ```
+3. Set up environment variables:
+   ```bash
+   cp .env.example .env
+   ```
+   - Update the values in the `.env` file as needed
+   - The application will work with the default values for local development
 
 ### Running the Application
 
@@ -56,6 +62,17 @@ src/
   └── index.css             # Global styles
 ```
 
+## Environment Variables
+
+The application uses the following environment variables:
+
+- `NODE_ENV`: Application environment (development/production)
+- `PORT`: Port to run the development server (default: 3000)
+- `SKIP_PREFLIGHT_CHECK`: Set to `true` to skip dependency checks
+- `DISABLE_ESLINT_PLUGIN`: Set to `true` to disable ESLint plugin in development
+
+For development, you can use the `.env.example` file as a template. Copy it to `.env` and modify as needed.
+
 ## Technical Details
 
 - **React**: Built with functional components and hooks
@@ -81,3 +98,7 @@ This project is licensed under the MIT License.
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+### Contact
+
+For any issues or collaboration opportunities, please contact [dasarisambasivanaidu7@gmail.com](mailto:dasarisambasivanaidu7@gmail.com)
